@@ -1,0 +1,2 @@
+Name:ali        Phone:32         Age:12        
+Name:hassan     Phone:32         Age:23        
