@@ -1,5 +1,4 @@
 use std::{
-    fmt::format,
     fs::File,
     io::{self, stdin, Write},
     vec,
@@ -22,7 +21,7 @@ impl Person {
         println!("Enter your name: ");
         stdin()
             .read_line(&mut input)
-            .expect("Filed to read command");
+            .expect("Failed to read command");
         person.name = input.trim().to_string();
         input.clear();
         println!("Enter your age: ");
@@ -32,7 +31,7 @@ impl Person {
         println!("your phone: ");
         stdin()
             .read_line(&mut input)
-            .expect("Faield to read phone!");
+            .expect("Failed to read phone!");
         person.phone = input.trim().to_string();
         input.clear();
         person
@@ -65,7 +64,7 @@ fn main() -> io::Result<()> {
         println!("3- Write list to a file");
         stdin()
             .read_line(&mut cmd)
-            .expect("Faield to read command!");
+            .expect("Failed to read command!");
         match cmd.trim() {
             "0" => {
                 println!("Good bye");
@@ -93,7 +92,8 @@ fn main() -> io::Result<()> {
                 return Ok(());
             }
             other => {
-                println!("Panic error! {other}");
+                println!("Input unknown! {other}");
+
                 clear();
                 break;
             }
